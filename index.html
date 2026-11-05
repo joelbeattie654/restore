@@ -84,11 +84,6 @@
             0% { transform: translateX(0%); }
             100% { transform: translateX(-50%); }
         }
-
-        .tab-btn.active {
-            background-color: #111111;
-            color: #f4f4f0;
-        }
     </style>
 </head>
 <body class="noise-bg antialiased selection:bg-accent selection:text-white">
@@ -156,7 +151,7 @@
                     Architectural Palimpsests of Ulster.
                 </h1>
                 <p class="text-lg lg:text-xl font-medium leading-relaxed">
-                    <strong class="text-accent">RESTORED</strong> is an information-dense digital and physical exhibition documenting four landmark structural transformations across Northern Ireland. This archive maps out the granular historical transitions from Victorian industrial grit and post-war civic identity to contemporary architectural regeneration.
+                    <strong class="text-accent">RESTORED</strong> is an information-dense digital and physical exhibition documenting four landmark structural transformations across Northern Ireland. This archive maps out granular historical transitions from Victorian industrial grit and post-war civic identity to contemporary architectural regeneration.
                 </p>
                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t-2 border-ink">
                     <div>
@@ -192,29 +187,36 @@
 
         <!-- Project 1: Titanic Hotel Belfast -->
         <section id="project-1" class="project-section scroll-mt-28 space-y-8 bg-white brutal-border brutal-shadow-lg p-6 lg:p-10">
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b-2 border-ink pb-6">
-                <div>
-                    <span class="font-mono text-xs font-bold bg-ink text-canvas px-3 py-1 uppercase tracking-widest">Project 01</span>
-                    <h2 class="font-display text-4xl lg:text-5xl font-bold uppercase tracking-tight mt-2">Titanic Hotel Belfast</h2>
-                    <p class="text-subtle font-mono text-xs mt-1">Former Harland & Wolff Drawing Offices & Headquarters</p>
-                </div>
-                <div class="flex gap-2">
-                    <button onclick="switchView('p1', 'a')" class="tab-btn p1-btn-a active px-4 py-2 font-mono text-xs uppercase brutal-border brutal-shadow-sm transition-all">View A (Render)</button>
-                    <button onclick="switchView('p1', 'b')" class="tab-btn p1-btn-b px-4 py-2 font-mono text-xs uppercase brutal-border brutal-shadow-sm transition-all">View B (Blueprint/Detail)</button>
-                </div>
+            <div class="border-b-2 border-ink pb-6">
+                <span class="font-mono text-xs font-bold bg-ink text-canvas px-3 py-1 uppercase tracking-widest">Project 01</span>
+                <h2 class="font-display text-4xl lg:text-5xl font-bold uppercase tracking-tight mt-2">Titanic Hotel Belfast</h2>
+                <p class="text-subtle font-mono text-xs mt-1">Former Harland & Wolff Drawing Offices & Headquarters</p>
             </div>
 
-            <!-- Image Stage (Updated with images/ folder path) -->
-            <div class="relative brutal-border bg-zinc-100 overflow-hidden aspect-[16/9] max-h-[550px] flex items-center justify-center">
-                <img id="p1-img-a" src="images/restore 1a.png" alt="Titanic Hotel Belfast - Render Collage" class="w-full h-full object-cover transition-opacity duration-300">
-                <img id="p1-img-b" src="images/restore 1b.png" alt="Titanic Hotel Belfast - Architectural Detail" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-300 pointer-events-none">
-                <div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur px-3 py-1 brutal-border font-mono text-xs">
-                    <span id="p1-caption">Fig 1.1: Isometric View / Artistic Intervention</span>
+            <!-- Side-by-Side Square Image Comparison (A & B visible simultaneously) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                    <div class="relative brutal-border bg-zinc-900 aspect-square flex items-center justify-center overflow-hidden">
+                        <img src="images/restore 1a.png" alt="Titanic Hotel Belfast - View A" class="w-full h-full object-contain p-2">
+                    </div>
+                    <div class="flex justify-between items-center font-mono text-xs px-1">
+                        <span class="font-bold uppercase">View A: Artistic Render</span>
+                        <span class="text-subtle">Artwork Collage</span>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="relative brutal-border bg-zinc-900 aspect-square flex items-center justify-center overflow-hidden">
+                        <img src="images/restore 1b.png" alt="Titanic Hotel Belfast - View B" class="w-full h-full object-contain p-2">
+                    </div>
+                    <div class="flex justify-between items-center font-mono text-xs px-1">
+                        <span class="font-bold uppercase">View B: Blueprint & Detail</span>
+                        <span class="text-subtle">Archive Analysis</span>
+                    </div>
                 </div>
             </div>
 
             <!-- Deep Information Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 pt-4">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 pt-4 border-t border-zinc-200">
                 <div class="space-y-3">
                     <h3 class="font-display font-bold uppercase tracking-wide text-sm bg-ink text-canvas px-3 py-1.5 inline-block">01. Chronology & Origin</h3>
                     <ul class="space-y-2 text-sm">
@@ -242,29 +244,36 @@
 
         <!-- Project 2: The WeavingWorks Belfast -->
         <section id="project-2" class="project-section scroll-mt-28 space-y-8 bg-white brutal-border brutal-shadow-lg p-6 lg:p-10">
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b-2 border-ink pb-6">
-                <div>
-                    <span class="font-mono text-xs font-bold bg-ink text-canvas px-3 py-1 uppercase tracking-widest">Project 02</span>
-                    <h2 class="font-display text-4xl lg:text-5xl font-bold uppercase tracking-tight mt-2">The WeavingWorks Belfast</h2>
-                    <p class="text-subtle font-mono text-xs mt-1">Historic Linen Warehouse, Alfred Street / Linen Quarter</p>
-                </div>
-                <div class="flex gap-2">
-                    <button onclick="switchView('p2', 'a')" class="tab-btn p2-btn-a active px-4 py-2 font-mono text-xs uppercase brutal-border brutal-shadow-sm transition-all">View A (Render)</button>
-                    <button onclick="switchView('p2', 'b')" class="tab-btn p2-btn-b px-4 py-2 font-mono text-xs uppercase brutal-border brutal-shadow-sm transition-all">View B (Blueprint/Detail)</button>
-                </div>
+            <div class="border-b-2 border-ink pb-6">
+                <span class="font-mono text-xs font-bold bg-ink text-canvas px-3 py-1 uppercase tracking-widest">Project 02</span>
+                <h2 class="font-display text-4xl lg:text-5xl font-bold uppercase tracking-tight mt-2">The WeavingWorks Belfast</h2>
+                <p class="text-subtle font-mono text-xs mt-1">Historic Linen Warehouse, Alfred Street / Linen Quarter</p>
             </div>
 
-            <!-- Image Stage (Updated with images/ folder path) -->
-            <div class="relative brutal-border bg-zinc-100 overflow-hidden aspect-[16/9] max-h-[550px] flex items-center justify-center">
-                <img id="p2-img-a" src="images/restore 2a.png" alt="The WeavingWorks - Render Collage" class="w-full h-full object-cover transition-opacity duration-300">
-                <img id="p2-img-b" src="images/restore 2b.png" alt="The WeavingWorks - Architectural Detail" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-300 pointer-events-none">
-                <div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur px-3 py-1 brutal-border font-mono text-xs">
-                    <span id="p2-caption">Fig 2.1: Facade Elevation & Urban Context</span>
+            <!-- Side-by-Side Square Image Comparison -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                    <div class="relative brutal-border bg-zinc-900 aspect-square flex items-center justify-center overflow-hidden">
+                        <img src="images/restore 2a.png" alt="The WeavingWorks - View A" class="w-full h-full object-contain p-2">
+                    </div>
+                    <div class="flex justify-between items-center font-mono text-xs px-1">
+                        <span class="font-bold uppercase">View A: Artistic Render</span>
+                        <span class="text-subtle">Artwork Collage</span>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="relative brutal-border bg-zinc-900 aspect-square flex items-center justify-center overflow-hidden">
+                        <img src="images/restore 2b.png" alt="The WeavingWorks - View B" class="w-full h-full object-contain p-2">
+                    </div>
+                    <div class="flex justify-between items-center font-mono text-xs px-1">
+                        <span class="font-bold uppercase">View B: Blueprint & Detail</span>
+                        <span class="text-subtle">Archive Analysis</span>
+                    </div>
                 </div>
             </div>
 
             <!-- Deep Information Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 pt-4">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 pt-4 border-t border-zinc-200">
                 <div class="space-y-3">
                     <h3 class="font-display font-bold uppercase tracking-wide text-sm bg-ink text-canvas px-3 py-1.5 inline-block">01. Chronology & Origin</h3>
                     <ul class="space-y-2 text-sm">
@@ -291,29 +300,36 @@
 
         <!-- Project 3: The Savoy Bangor -->
         <section id="project-3" class="project-section scroll-mt-28 space-y-8 bg-white brutal-border brutal-shadow-lg p-6 lg:p-10">
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b-2 border-ink pb-6">
-                <div>
-                    <span class="font-mono text-xs font-bold bg-ink text-canvas px-3 py-1 uppercase tracking-widest">Project 03</span>
-                    <h2 class="font-display text-4xl lg:text-5xl font-bold uppercase tracking-tight mt-2">The Savoy Bangor</h2>
-                    <p class="text-subtle font-mono text-xs mt-1">Former Savoy Hotel & Entertainment Venue, County Down</p>
-                </div>
-                <div class="flex gap-2">
-                    <button onclick="switchView('p3', 'a')" class="tab-btn p3-btn-a active px-4 py-2 font-mono text-xs uppercase brutal-border brutal-shadow-sm transition-all">View A (Render)</button>
-                    <button onclick="switchView('p3', 'b')" class="tab-btn p3-btn-b px-4 py-2 font-mono text-xs uppercase brutal-border brutal-shadow-sm transition-all">View B (Blueprint/Detail)</button>
-                </div>
+            <div class="border-b-2 border-ink pb-6">
+                <span class="font-mono text-xs font-bold bg-ink text-canvas px-3 py-1 uppercase tracking-widest">Project 03</span>
+                <h2 class="font-display text-4xl lg:text-5xl font-bold uppercase tracking-tight mt-2">The Savoy Bangor</h2>
+                <p class="text-subtle font-mono text-xs mt-1">Former Savoy Hotel & Entertainment Venue, County Down</p>
             </div>
 
-            <!-- Image Stage (Updated with images/ folder path) -->
-            <div class="relative brutal-border bg-zinc-100 overflow-hidden aspect-[16/9] max-h-[550px] flex items-center justify-center">
-                <img id="p3-img-a" src="images/restore 3a.png" alt="The Savoy Bangor - Render Collage" class="w-full h-full object-cover transition-opacity duration-300">
-                <img id="p3-img-b" src="images/restore 3b.png" alt="The Savoy Bangor - Architectural Detail" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-300 pointer-events-none">
-                <div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur px-3 py-1 brutal-border font-mono text-xs">
-                    <span id="p3-caption">Fig 3.1: Coastal Elevation & Re-imagined Massing</span>
+            <!-- Side-by-Side Square Image Comparison -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                    <div class="relative brutal-border bg-zinc-900 aspect-square flex items-center justify-center overflow-hidden">
+                        <img src="images/restore 3a.png" alt="The Savoy Bangor - View A" class="w-full h-full object-contain p-2">
+                    </div>
+                    <div class="flex justify-between items-center font-mono text-xs px-1">
+                        <span class="font-bold uppercase">View A: Artistic Render</span>
+                        <span class="text-subtle">Artwork Collage</span>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="relative brutal-border bg-zinc-900 aspect-square flex items-center justify-center overflow-hidden">
+                        <img src="images/restore 3b.png" alt="The Savoy Bangor - View B" class="w-full h-full object-contain p-2">
+                    </div>
+                    <div class="flex justify-between items-center font-mono text-xs px-1">
+                        <span class="font-bold uppercase">View B: Blueprint & Detail</span>
+                        <span class="text-subtle">Archive Analysis</span>
+                    </div>
                 </div>
             </div>
 
             <!-- Deep Information Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 pt-4">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 pt-4 border-t border-zinc-200">
                 <div class="space-y-3">
                     <h3 class="font-display font-bold uppercase tracking-wide text-sm bg-ink text-canvas px-3 py-1.5 inline-block">01. Chronology & Origin</h3>
                     <ul class="space-y-2 text-sm">
@@ -340,29 +356,36 @@
 
         <!-- Project 4: Mersey Street Primary School Houses -->
         <section id="project-4" class="project-section scroll-mt-28 space-y-8 bg-white brutal-border brutal-shadow-lg p-6 lg:p-10">
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b-2 border-ink pb-6">
-                <div>
-                    <span class="font-mono text-xs font-bold bg-ink text-canvas px-3 py-1 uppercase tracking-widest">Project 04</span>
-                    <h2 class="font-display text-4xl lg:text-5xl font-bold uppercase tracking-tight mt-2">Mersey Street Primary School</h2>
-                    <p class="text-subtle font-mono text-xs mt-1">Grade B1 Listed School Transformed into Social Housing, East Belfast</p>
-                </div>
-                <div class="flex gap-2">
-                    <button onclick="switchView('p4', 'a')" class="tab-btn p4-btn-a active px-4 py-2 font-mono text-xs uppercase brutal-border brutal-shadow-sm transition-all">View A (Render)</button>
-                    <button onclick="switchView('p4', 'b')" class="tab-btn p4-btn-b px-4 py-2 font-mono text-xs uppercase brutal-border brutal-shadow-sm transition-all">View B (Blueprint/Detail)</button>
-                </div>
+            <div class="border-b-2 border-ink pb-6">
+                <span class="font-mono text-xs font-bold bg-ink text-canvas px-3 py-1 uppercase tracking-widest">Project 04</span>
+                <h2 class="font-display text-4xl lg:text-5xl font-bold uppercase tracking-tight mt-2">Mersey Street Primary School</h2>
+                <p class="text-subtle font-mono text-xs mt-1">Grade B1 Listed School Transformed into Social Housing, East Belfast</p>
             </div>
 
-            <!-- Image Stage (Updated with images/ folder path) -->
-            <div class="relative brutal-border bg-zinc-100 overflow-hidden aspect-[16/9] max-h-[550px] flex items-center justify-center">
-                <img id="p4-img-a" src="images/restore 4a.png" alt="Mersey Street Primary School - Render Collage" class="w-full h-full object-cover transition-opacity duration-300">
-                <img id="p4-img-b" src="images/restore 4b.png" alt="Mersey Street Primary School - Architectural Detail" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-300 pointer-events-none">
-                <div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur px-3 py-1 brutal-border font-mono text-xs">
-                    <span id="p4-caption">Fig 4.1: Fenestration & Civic Scale Analysis</span>
+            <!-- Side-by-Side Square Image Comparison -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                    <div class="relative brutal-border bg-zinc-900 aspect-square flex items-center justify-center overflow-hidden">
+                        <img src="images/restore 4a.png" alt="Mersey Street Primary School - View A" class="w-full h-full object-contain p-2">
+                    </div>
+                    <div class="flex justify-between items-center font-mono text-xs px-1">
+                        <span class="font-bold uppercase">View A: Artistic Render</span>
+                        <span class="text-subtle">Artwork Collage</span>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="relative brutal-border bg-zinc-900 aspect-square flex items-center justify-center overflow-hidden">
+                        <img src="images/restore 4b.png" alt="Mersey Street Primary School - View B" class="w-full h-full object-contain p-2">
+                    </div>
+                    <div class="flex justify-between items-center font-mono text-xs px-1">
+                        <span class="font-bold uppercase">View B: Blueprint & Detail</span>
+                        <span class="text-subtle">Archive Analysis</span>
+                    </div>
                 </div>
             </div>
 
             <!-- Deep Information Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 pt-4">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 pt-4 border-t border-zinc-200">
                 <div class="space-y-3">
                     <h3 class="font-display font-bold uppercase tracking-wide text-sm bg-ink text-canvas px-3 py-1.5 inline-block">01. Chronology & Origin</h3>
                     <ul class="space-y-2 text-sm">
@@ -409,42 +432,8 @@
 
     </main>
 
-    <!-- JavaScript for Interactive Image Toggling & NFC Hash Handling -->
+    <!-- JavaScript for NFC Hash Handling -->
     <script>
-        function switchView(projectId, viewType) {
-            const imgA = document.getElementById(`${projectId}-img-a`);
-            const imgB = document.getElementById(`${projectId}-img-b`);
-            const caption = document.getElementById(`${projectId}-caption`);
-            const btnA = document.querySelector(`.${projectId}-btn-a`);
-            const btnB = document.querySelector(`.${projectId}-btn-b`);
-
-            if (viewType === 'a') {
-                imgA.style.opacity = '1';
-                imgA.style.pointerEvents = 'auto';
-                imgB.style.opacity = '0';
-                imgB.style.pointerEvents = 'none';
-                btnA.classList.add('active');
-                btnB.classList.remove('active');
-                
-                if(projectId === 'p1') caption.innerText = "Fig 1.1: Isometric View / Artistic Intervention";
-                if(projectId === 'p2') caption.innerText = "Fig 2.1: Facade Elevation & Urban Context";
-                if(projectId === 'p3') caption.innerText = "Fig 3.1: Coastal Elevation & Re-imagined Massing";
-                if(projectId === 'p4') caption.innerText = "Fig 4.1: Fenestration & Civic Scale Analysis";
-            } else {
-                imgA.style.opacity = '0';
-                imgA.style.pointerEvents = 'none';
-                imgB.style.opacity = '1';
-                imgB.style.pointerEvents = 'auto';
-                btnB.classList.add('active');
-                btnA.classList.remove('active');
-
-                if(projectId === 'p1') caption.innerText = "Fig 1.2: Original Drawing Office Blueprint Analysis";
-                if(projectId === 'p2') caption.innerText = "Fig 2.2: 1907 Structural Timber & Brickwork Detail";
-                if(projectId === 'p3') caption.innerText = "Fig 3.2: John McBride Neill Elevation Plans (1933)";
-                if(projectId === 'p4') caption.innerText = "Fig 4.2: Wilshire School Fenestration & Anode Grid";
-            }
-        }
-
         function handleRouting() {
             const hash = window.location.hash;
             if (hash) {
