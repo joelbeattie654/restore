@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RESTORED — Adaptive Reuse Architectural Exhibition</title>
+    <title>RESTORED — Belfast Late Night Art Exhibition</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,12 +17,11 @@
                         display: ['"Space Grotesk"', 'sans-serif'],
                     },
                     colors: {
-                        canvas: '#f4f4f0',
-                        ink: '#111111',
-                        accent: '#ff3300',
-                        subtle: '#71717a',
+                        canvas: '#f8f8f5',
+                        ink: '#0a0a0a',
+                        accent: '#e63946',
+                        muted: '#6b7280',
                         cardbg: '#ffffff',
-                        bordercolor: '#111111'
                     }
                 }
             }
@@ -30,42 +29,37 @@
     </script>
     <style>
         body {
-            background-color: #f4f4f0;
-            color: #111111;
+            background-color: #f8f8f5;
+            color: #0a0a0a;
             font-family: 'Plus Jakarta Sans', sans-serif;
             overflow-x: hidden;
         }
 
-        .noise-bg {
-            background-image: radial-gradient(rgba(17, 17, 17, 0.08) 1px, transparent 0);
-            background-size: 24px 24px;
+        .modern-noise {
+            background-image: radial-gradient(rgba(10, 10, 10, 0.05) 1px, transparent 0);
+            background-size: 20px 20px;
         }
 
-        .brutal-border {
-            border: 2px solid #111111;
+        .clean-border {
+            border: 1px solid #0a0a0a;
         }
 
-        .brutal-shadow {
-            box-shadow: 4px 4px 0px #111111;
+        .hard-shadow {
+            box-shadow: 4px 4px 0px #0a0a0a;
         }
 
-        .brutal-shadow-lg {
-            box-shadow: 8px 8px 0px #111111;
-        }
-
-        .brutal-shadow-sm {
-            box-shadow: 2px 2px 0px #111111;
+        .hard-shadow-lg {
+            box-shadow: 6px 6px 0px #0a0a0a;
         }
 
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 6px;
         }
         ::-webkit-scrollbar-track {
-            background: #f4f4f0;
-            border-left: 2px solid #111111;
+            background: #f8f8f5;
         }
         ::-webkit-scrollbar-thumb {
-            background: #111111;
+            background: #0a0a0a;
         }
 
         .marquee {
@@ -77,363 +71,413 @@
 
         .marquee-content {
             display: flex;
-            animation: marquee 25s linear infinite;
+            animation: marquee 30s linear infinite;
         }
 
         @keyframes marquee {
             0% { transform: translateX(0%); }
             100% { transform: translateX(-50%); }
         }
+
+        /* Before/After Image Comparison Slider Styles */
+        .comparison-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            user-select: none;
+        }
+
+        .comparison-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+
+        .comparison-container .img-night {
+            clip-path: polygon(100% 0, 100% 100%, 50% 100%, 50% 0);
+            transition: clip-path 0.05s ease-out;
+        }
+
+        .comparison-slider {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            background: #ffffff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            z-index: 10;
+            cursor: ew-resize;
+            touch-action: none;
+        }
+
+        .comparison-handle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 36px;
+            height: 36px;
+            background: #0a0a0a;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-family: monospace;
+            font-weight: bold;
+        }
     </style>
 </head>
-<body class="noise-bg antialiased selection:bg-accent selection:text-white">
+<body class="modern-noise antialiased selection:bg-accent selection:text-white">
 
     <!-- Top Marquee Ticker -->
-    <div class="bg-ink text-canvas py-2 border-b-2 border-ink overflow-hidden font-display text-xs tracking-widest uppercase">
+    <div class="bg-ink text-canvas py-2 border-b border-ink overflow-hidden font-display text-xs tracking-widest uppercase">
         <div class="marquee">
             <div class="marquee-content flex gap-8 items-center">
-                <span>✦ EXHIBITION: RESTORED — ADAPTIVE REUSE ARCHITECTURAL COLLAGES NORTHERN IRELAND</span>
+                <span>✦ BELFAST LATE NIGHT ART EXHIBITION</span>
                 <span>•</span>
-                <span>CURATED FOR NFC IMMERSIVE SCANNING</span>
+                <span>FEATURED ARTIST SERIES: RESTORED</span>
                 <span>•</span>
                 <span>TITANIC HOTEL</span>
+                <span>•</span>
+                <span>MERSEY STREET PRIMARY</span>
                 <span>•</span>
                 <span>THE WEAVINGWORKS</span>
                 <span>•</span>
                 <span>THE SAVOY BANGOR</span>
-                <span>•</span>
-                <span>MERSEY STREET PRIMARY</span>
                 <span>•</span>
             </div>
             <div class="marquee-content flex gap-8 items-center" aria-hidden="true">
-                <span>✦ EXHIBITION: RESTORED — ADAPTIVE REUSE ARCHITECTURAL COLLAGES NORTHERN IRELAND</span>
+                <span>✦ BELFAST LATE NIGHT ART EXHIBITION</span>
                 <span>•</span>
-                <span>CURATED FOR NFC IMMERSIVE SCANNING</span>
+                <span>FEATURED ARTIST SERIES: RESTORED</span>
                 <span>•</span>
                 <span>TITANIC HOTEL</span>
+                <span>•</span>
+                <span>MERSEY STREET PRIMARY</span>
                 <span>•</span>
                 <span>THE WEAVINGWORKS</span>
                 <span>•</span>
                 <span>THE SAVOY BANGOR</span>
-                <span>•</span>
-                <span>MERSEY STREET PRIMARY</span>
                 <span>•</span>
             </div>
         </div>
     </div>
 
     <!-- Navigation Header -->
-    <header class="sticky top-0 z-50 bg-canvas/90 backdrop-blur-md border-b-2 border-ink px-6 lg:px-12 py-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+    <header class="sticky top-0 z-50 bg-canvas/95 backdrop-blur-md border-b border-ink px-4 sm:px-8 py-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>
-            <a href="#" class="font-display text-3xl font-extrabold tracking-tighter uppercase flex items-center gap-2">
-                RESTORED<span class="inline-block w-3 h-3 bg-accent rounded-full"></span>
+            <a href="#" class="font-display text-2xl sm:text-3xl font-black tracking-tighter uppercase flex items-center gap-2">
+                RESTORED<span class="inline-block w-2.5 h-2.5 bg-accent rounded-full"></span>
             </a>
-            <p class="text-xs font-mono uppercase tracking-wider text-subtle">Northern Ireland Adaptive Reuse Exhibition</p>
+            <p class="text-[10px] sm:text-xs font-mono uppercase tracking-wider text-muted">Belfast Late Night Art Showcase</p>
         </div>
-        <nav class="flex flex-wrap gap-2 text-xs font-display uppercase tracking-wider">
-            <a href="#overview" class="px-3 py-1.5 brutal-border brutal-shadow-sm bg-white hover:bg-ink hover:text-canvas transition-all">Overview</a>
-            <a href="#project-1" class="px-3 py-1.5 brutal-border brutal-shadow-sm bg-white hover:bg-ink hover:text-canvas transition-all">01. Titanic</a>
-            <a href="#project-2" class="px-3 py-1.5 brutal-border brutal-shadow-sm bg-white hover:bg-ink hover:text-canvas transition-all">02. WeavingWorks</a>
-            <a href="#project-3" class="px-3 py-1.5 brutal-border brutal-shadow-sm bg-white hover:bg-ink hover:text-canvas transition-all">03. Savoy Bangor</a>
-            <a href="#project-4" class="px-3 py-1.5 brutal-border brutal-shadow-sm bg-white hover:bg-ink hover:text-canvas transition-all">04. Mersey St</a>
+        <nav class="flex flex-wrap gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-display uppercase tracking-wider">
+            <a href="#overview" class="px-3 py-1.5 clean-border bg-white hover:bg-ink hover:text-canvas transition-all">Overview</a>
+            <a href="#project-1" class="px-3 py-1.5 clean-border bg-white hover:bg-ink hover:text-canvas transition-all">01. Titanic</a>
+            <a href="#project-2" class="px-3 py-1.5 clean-border bg-white hover:bg-ink hover:text-canvas transition-all">02. Mersey St</a>
+            <a href="#project-3" class="px-3 py-1.5 clean-border bg-white hover:bg-ink hover:text-canvas transition-all">03. WeavingWorks</a>
+            <a href="#project-4" class="px-3 py-1.5 clean-border bg-white hover:bg-ink hover:text-canvas transition-all">04. Savoy Bangor</a>
         </nav>
     </header>
 
-    <main class="max-w-7xl mx-auto px-6 lg:px-12 py-12 space-y-24">
+    <main class="max-w-7xl mx-auto px-4 sm:px-8 py-10 sm:py-16 space-y-20 sm:space-y-32">
 
         <!-- Hero / Exhibition Overview Section -->
-        <section id="overview" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-6">
+        <section id="overview" class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div class="lg:col-span-7 space-y-6">
-                <div class="inline-block px-3 py-1 bg-accent text-white font-mono text-xs uppercase tracking-widest brutal-border brutal-shadow-sm">
-                    Exhibition Catalogue & Research Archive
+                <div class="inline-block px-3 py-1 bg-accent text-white font-mono text-xs uppercase tracking-widest clean-border">
+                    Belfast Late Night Art Special Exhibition
                 </div>
-                <h1 class="font-display text-5xl lg:text-7xl font-bold tracking-tight uppercase leading-none">
-                    Architectural Palimpsests of Ulster.
+                <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight uppercase leading-none">
+                    Architectural Palimpsests.
                 </h1>
-                <p class="text-lg lg:text-xl font-medium leading-relaxed">
-                    <strong class="text-accent">RESTORED</strong> is an information-dense digital and physical exhibition documenting four landmark structural transformations across Northern Ireland. This archive maps out granular historical transitions from Victorian industrial grit and post-war civic identity to contemporary architectural regeneration.
+                <p class="text-base sm:text-lg font-normal leading-relaxed text-zinc-700">
+                    <strong class="text-accent font-semibold">RESTORED</strong> is an information-dense visual exploration documenting four landmark adaptive reuse transformations across Northern Ireland. Presented for Belfast Late Night Art, this archive maps the granular transitions from Victorian industrial heritage and post-war civic identity to modern regeneration. Drag or slide the interactive windows below to reveal day and night states.
                 </p>
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t-2 border-ink">
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-ink/20 font-mono text-xs">
                     <div>
-                        <span class="block font-display text-3xl font-bold">04</span>
-                        <span class="text-xs font-mono uppercase text-subtle">Landmark Projects</span>
+                        <span class="block font-display text-2xl sm:text-3xl font-bold">04</span>
+                        <span class="text-muted uppercase">Landmark Projects</span>
                     </div>
                     <div>
-                        <span class="block font-display text-3xl font-bold">1907–1933</span>
-                        <span class="text-xs font-mono uppercase text-subtle">Era Span</span>
+                        <span class="block font-display text-2xl sm:text-3xl font-bold">1907–1933</span>
+                        <span class="text-muted uppercase">Era Span</span>
                     </div>
                     <div>
-                        <span class="block font-display text-3xl font-bold">NFC</span>
-                        <span class="text-xs font-mono uppercase text-subtle">Interactive Physical Link</span>
+                        <span class="block font-display text-2xl sm:text-3xl font-bold">Day/Night</span>
+                        <span class="text-muted uppercase">Interactive Slider</span>
                     </div>
                 </div>
             </div>
-            <div class="lg:col-span-5 bg-white brutal-border brutal-shadow-lg p-6 space-y-4">
-                <div class="border-b-2 border-ink pb-3 flex justify-between items-center">
+            <div class="lg:col-span-5 bg-white clean-border hard-shadow-lg p-6 sm:p-8 space-y-4">
+                <div class="border-b border-ink pb-3 flex justify-between items-center">
                     <span class="font-mono text-xs uppercase tracking-wider font-bold">Exhibition Manifesto</span>
-                    <span class="w-2 h-2 bg-accent rounded-full animate-ping"></span>
+                    <span class="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
                 </div>
                 <p class="text-sm font-sans leading-relaxed text-zinc-800">
-                    Adaptive reuse is not merely conservation; it is architectural collage. By splicing original engineering blueprints, structural steel insertions, and contemporary programmatic needs, these four works interrogate how Northern Ireland's built heritage can house modern living, tourism, and community without erasing historical trauma or industrial memory.
+                    Adaptive reuse is architectural storytelling. By splicing historical engineering blueprints, structural steel interventions, and modern programmatic needs, these works interrogate how our built heritage houses contemporary life without erasing historical memory.
                 </p>
-                <div class="pt-4 flex items-center justify-between font-mono text-xs text-subtle border-t border-zinc-200">
-                    <span>STATUS: LIVE ARCHIVE</span>
-                    <span>NFC ROUTING READY</span>
+                <div class="pt-4 flex items-center justify-between font-mono text-xs text-muted border-t border-zinc-100">
+                    <span>VENUE: BELFAST</span>
+                    <span>STATUS: OPEN ARCHIVE</span>
                 </div>
             </div>
         </section>
 
-        <div class="w-full h-0.5 bg-ink"></div>
+        <div class="w-full h-px bg-ink/20"></div>
 
         <!-- Project 1: Titanic Hotel Belfast -->
-        <section id="project-1" class="project-section scroll-mt-28 space-y-8 bg-white brutal-border brutal-shadow-lg p-6 lg:p-10">
-            <div class="border-b-2 border-ink pb-6">
-                <span class="font-mono text-xs font-bold bg-ink text-canvas px-3 py-1 uppercase tracking-widest">Project 01</span>
-                <h2 class="font-display text-4xl lg:text-5xl font-bold uppercase tracking-tight mt-2">Titanic Hotel Belfast</h2>
-                <p class="text-subtle font-mono text-xs mt-1">Former Harland & Wolff Drawing Offices & Headquarters</p>
+        <section id="project-1" class="project-section scroll-mt-24 space-y-8 bg-white clean-border hard-shadow-lg p-6 sm:p-10">
+            <div class="border-b border-ink pb-4">
+                <span class="font-mono text-xs font-bold bg-ink text-canvas px-2.5 py-1 uppercase tracking-widest">Project 01</span>
+                <h2 class="font-display text-3xl sm:text-5xl font-bold uppercase tracking-tight mt-2">Titanic Hotel Belfast</h2>
+                <p class="text-muted font-mono text-xs mt-1">Former Harland & Wolff Drawing Offices & Headquarters</p>
             </div>
 
-            <!-- Side-by-Side Square Image Comparison (A & B visible simultaneously) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="space-y-2">
-                    <div class="relative brutal-border bg-zinc-900 aspect-square flex items-center justify-center overflow-hidden">
-                        <img src="images/restore 1a.png" alt="Titanic Hotel Belfast - View A" class="w-full h-full object-contain p-2">
-                    </div>
-                    <div class="flex justify-between items-center font-mono text-xs px-1">
-                        <span class="font-bold uppercase">View A: Artistic Render</span>
-                        <span class="text-subtle">Artwork Collage</span>
+            <!-- Interactive Day/Night Slider -->
+            <div class="space-y-2">
+                <div class="comparison-container clean-border bg-zinc-900" id="slider-p1">
+                    <img src="images/restore 1a.png" alt="Titanic Hotel Belfast - Day" class="img-day">
+                    <img src="images/restore 1b.png" alt="Titanic Hotel Belfast - Night" class="img-night">
+                    <div class="comparison-slider" style="left: 50%;">
+                        <div class="comparison-handle">D/N</div>
                     </div>
                 </div>
-                <div class="space-y-2">
-                    <div class="relative brutal-border bg-zinc-900 aspect-square flex items-center justify-center overflow-hidden">
-                        <img src="images/restore 1b.png" alt="Titanic Hotel Belfast - View B" class="w-full h-full object-contain p-2">
-                    </div>
-                    <div class="flex justify-between items-center font-mono text-xs px-1">
-                        <span class="font-bold uppercase">View B: Blueprint & Detail</span>
-                        <span class="text-subtle">Archive Analysis</span>
-                    </div>
+                <div class="flex justify-between items-center font-mono text-xs text-muted px-1">
+                    <span>← Drag slider to compare Day & Night states →</span>
+                    <span class="font-bold text-ink">Square Format Archive</span>
                 </div>
             </div>
 
-            <!-- Deep Information Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 pt-4 border-t border-zinc-200">
-                <div class="space-y-3">
-                    <h3 class="font-display font-bold uppercase tracking-wide text-sm bg-ink text-canvas px-3 py-1.5 inline-block">01. Chronology & Origin</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li><strong class="font-mono">Construction Dates:</strong> 1889–1911 (Built in phases as the administrative hub for Harland & Wolff).</li>
-                        <li><strong class="font-mono">Original Architect:</strong> W.H. Pim and subsequent expansions by James Logan and other shipyard engineers.</li>
-                        <li><strong class="font-mono">Historical Use:</strong> The world-famous drawing offices where RMS Titanic, Olympic, and Britannic were designed, alongside the main corporate headquarters directing global shipbuilding supremacy.</li>
+            <!-- Information Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 pt-4 border-t border-zinc-200">
+                <div class="space-y-2">
+                    <h3 class="font-display font-bold uppercase tracking-wide text-xs bg-ink text-canvas px-2.5 py-1 inline-block">01. Chronology & Origin</h3>
+                    <ul class="space-y-1.5 text-xs sm:text-sm text-zinc-700">
+                        <li><strong class="font-mono text-ink">Construction:</strong> 1889–1911 in phases.</li>
+                        <li><strong class="font-mono text-ink">Original Architects:</strong> W.H. Pim, James Logan, and shipyard engineers.</li>
+                        <li><strong class="font-mono text-ink">Historical Use:</strong> World-famous drawing offices where RMS Titanic, Olympic, and Britannic were designed, alongside Harland & Wolff corporate headquarters.</li>
                     </ul>
                 </div>
-                <div class="space-y-3">
-                    <h3 class="font-display font-bold uppercase tracking-wide text-sm bg-ink text-canvas px-3 py-1.5 inline-block">02. Adaptive Reuse & Architects</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li><strong class="font-mono">Lead Conservation Architects:</strong> Consarc Conservation & RMI Architects.</li>
-                        <li><strong class="font-mono">Structural Engineers:</strong> Albert Fry Associates.</li>
-                        <li><strong class="font-mono">Intervention Strategy:</strong> Careful planning and methodology enabled sensitive structural insertions to convert the high-ceilinged drafting rooms and executive offices into a luxury 119-room hotel. Preserved the iconic three-storey high barrel-vaulted ceilings, original tilework, and Belfast brickwork without compromising historic listing status.</li>
+                <div class="space-y-2">
+                    <h3 class="font-display font-bold uppercase tracking-wide text-xs bg-ink text-canvas px-2.5 py-1 inline-block">02. Adaptive Reuse & Architects</h3>
+                    <ul class="space-y-1.5 text-xs sm:text-sm text-zinc-700">
+                        <li><strong class="font-mono text-ink">Conservation Architects:</strong> Consarc Conservation & RMI Architects.</li>
+                        <li><strong class="font-mono text-ink">Engineers:</strong> Albert Fry Associates.</li>
+                        <li><strong class="font-mono text-ink">Intervention:</strong> Converted drafting rooms into a 119-room luxury hotel, preserving 3-storey barrel-vaulted ceilings and historic tilework.</li>
                     </ul>
                 </div>
-                <div class="space-y-3">
-                    <h3 class="font-display font-bold uppercase tracking-wide text-sm bg-accent text-white px-3 py-1.5 inline-block">03. Artwork & Concept</h3>
-                    <p class="text-sm leading-relaxed">
-                        This digital collage stitches together archival blueprints from the 1908 drafting expansion with contemporary thermal mapping. It explores the tension between dead labor (the blueprints of lost vessels) and living capital (luxury hospitality tourism), capturing how heavy industrial architecture transforms into sanitized heritage leisure spaces.
+                <div class="space-y-2">
+                    <h3 class="font-display font-bold uppercase tracking-wide text-xs bg-accent text-white px-2.5 py-1 inline-block">03. Cinematic Architecture</h3>
+                    <p class="text-xs sm:text-sm leading-relaxed text-zinc-700">
+                        Similar grand industrial-to-hospitality atmosphere found in films like <strong class="text-ink">The Great Gatsby</strong> (industrial ambition meeting luxury) and <strong class="text-ink">Titanic</strong> (historical grandeur).
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- Project 2: The WeavingWorks Belfast -->
-        <section id="project-2" class="project-section scroll-mt-28 space-y-8 bg-white brutal-border brutal-shadow-lg p-6 lg:p-10">
-            <div class="border-b-2 border-ink pb-6">
-                <span class="font-mono text-xs font-bold bg-ink text-canvas px-3 py-1 uppercase tracking-widest">Project 02</span>
-                <h2 class="font-display text-4xl lg:text-5xl font-bold uppercase tracking-tight mt-2">The WeavingWorks Belfast</h2>
-                <p class="text-subtle font-mono text-xs mt-1">Historic Linen Warehouse, Alfred Street / Linen Quarter</p>
+        <!-- Project 2: Mersey Street Primary School -->
+        <section id="project-2" class="project-section scroll-mt-24 space-y-8 bg-white clean-border hard-shadow-lg p-6 sm:p-10">
+            <div class="border-b border-ink pb-4">
+                <span class="font-mono text-xs font-bold bg-ink text-canvas px-2.5 py-1 uppercase tracking-widest">Project 02</span>
+                <h2 class="font-display text-3xl sm:text-5xl font-bold uppercase tracking-tight mt-2">Mersey Street Primary School</h2>
+                <p class="text-muted font-mono text-xs mt-1">Grade B1 Listed School Transformed into Social Housing, East Belfast</p>
             </div>
 
-            <!-- Side-by-Side Square Image Comparison -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="space-y-2">
-                    <div class="relative brutal-border bg-zinc-900 aspect-square flex items-center justify-center overflow-hidden">
-                        <img src="images/restore 2a.png" alt="The WeavingWorks - View A" class="w-full h-full object-contain p-2">
-                    </div>
-                    <div class="flex justify-between items-center font-mono text-xs px-1">
-                        <span class="font-bold uppercase">View A: Artistic Render</span>
-                        <span class="text-subtle">Artwork Collage</span>
+            <!-- Interactive Day/Night Slider -->
+            <div class="space-y-2">
+                <div class="comparison-container clean-border bg-zinc-900" id="slider-p2">
+                    <img src="images/restore 4a.png" alt="Mersey Street Primary School - Day" class="img-day">
+                    <img src="images/restore 4b.png" alt="Mersey Street Primary School - Night" class="img-night">
+                    <div class="comparison-slider" style="left: 50%;">
+                        <div class="comparison-handle">D/N</div>
                     </div>
                 </div>
-                <div class="space-y-2">
-                    <div class="relative brutal-border bg-zinc-900 aspect-square flex items-center justify-center overflow-hidden">
-                        <img src="images/restore 2b.png" alt="The WeavingWorks - View B" class="w-full h-full object-contain p-2">
-                    </div>
-                    <div class="flex justify-between items-center font-mono text-xs px-1">
-                        <span class="font-bold uppercase">View B: Blueprint & Detail</span>
-                        <span class="text-subtle">Archive Analysis</span>
-                    </div>
+                <div class="flex justify-between items-center font-mono text-xs text-muted px-1">
+                    <span>← Drag slider to compare Day & Night states →</span>
+                    <span class="font-bold text-ink">Square Format Archive</span>
                 </div>
             </div>
 
-            <!-- Deep Information Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 pt-4 border-t border-zinc-200">
-                <div class="space-y-3">
-                    <h3 class="font-display font-bold uppercase tracking-wide text-sm bg-ink text-canvas px-3 py-1.5 inline-block">01. Chronology & Origin</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li><strong class="font-mono">Construction Dates:</strong> 1907–1908.</li>
-                        <li><strong class="font-mono">Original Architect:</strong> William J. Roome.</li>
-                        <li><strong class="font-mono">Historical Use:</strong> Built as a grand four-storey red brick linen warehouse for Greeves, Ridgeway & Co., linen and damask manufacturers during Belfast's height as "Linenopolis"—the global epicentre of the linen trade.</li>
+            <!-- Information Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 pt-4 border-t border-zinc-200">
+                <div class="space-y-2">
+                    <h3 class="font-display font-bold uppercase tracking-wide text-xs bg-ink text-canvas px-2.5 py-1 inline-block">01. Chronology & Origin</h3>
+                    <ul class="space-y-1.5 text-xs sm:text-sm text-zinc-700">
+                        <li><strong class="font-mono text-ink">Construction:</strong> Designed prior to World War II.</li>
+                        <li><strong class="font-mono text-ink">Original Architect:</strong> Reginald Sherman Wilshire (Belfast Education Committee).</li>
+                        <li><strong class="font-mono text-ink">Historical Use:</strong> An exceptional educational facility serving generations of working-class children in East Belfast (Grade B1 Listed).</li>
                     </ul>
                 </div>
-                <div class="space-y-3">
-                    <h3 class="font-display font-bold uppercase tracking-wide text-sm bg-ink text-canvas px-3 py-1.5 inline-block">02. Adaptive Reuse & Architects</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li><strong class="font-mono">Lead Architectural Firm:</strong> RMI Architects (Rejen Group).</li>
-                        <li><strong class="font-mono">Intervention Strategy:</strong> Conversion of a derelict, deep-plan industrial warehouse into vibrant mixed-use spaces and modern creative offices. Preserved heavy timber internal floor joists, cast-iron columns, and external red brick masonry façades while introducing modern vertical circulation, thermal insulation envelopes, and high-performance glazing.</li>
+                <div class="space-y-2">
+                    <h3 class="font-display font-bold uppercase tracking-wide text-xs bg-ink text-canvas px-2.5 py-1 inline-block">02. Adaptive Reuse & Architects</h3>
+                    <ul class="space-y-1.5 text-xs sm:text-sm text-zinc-700">
+                        <li><strong class="font-mono text-ink">Developer:</strong> Connswater Homes.</li>
+                        <li><strong class="font-mono text-ink">Intervention:</strong> Converted into 30 social housing apartments using advanced DuoGuard hybrid anode concrete protection while preserving historic facades and classroom windows.</li>
                     </ul>
                 </div>
-                <div class="space-y-3">
-                    <h3 class="font-display font-bold uppercase tracking-wide text-sm bg-accent text-white px-3 py-1.5 inline-block">03. Artwork & Concept</h3>
-                    <p class="text-sm leading-relaxed">
-                        The artwork superimposes 1907 mercantile ledger entries over the exposed structural bays of Alfred Street. It acts as an inquiry into how post-industrial urban cores can be reinhabited by knowledge-economy workspaces without severing the physical weight of Victorian trade infrastructure.
+                <div class="space-y-2">
+                    <h3 class="font-display font-bold uppercase tracking-wide text-xs bg-accent text-white px-2.5 py-1 inline-block">03. Cinematic Architecture</h3>
+                    <p class="text-xs sm:text-sm leading-relaxed text-zinc-700">
+                        Shares the institutional brick aesthetic and community rebirth seen in <strong class="text-ink">To Kill a Mockingbird</strong> or <strong class="text-ink">The Shawshank Redemption</strong> (historic brick institutions repurposed).
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- Project 3: The Savoy Bangor -->
-        <section id="project-3" class="project-section scroll-mt-28 space-y-8 bg-white brutal-border brutal-shadow-lg p-6 lg:p-10">
-            <div class="border-b-2 border-ink pb-6">
-                <span class="font-mono text-xs font-bold bg-ink text-canvas px-3 py-1 uppercase tracking-widest">Project 03</span>
-                <h2 class="font-display text-4xl lg:text-5xl font-bold uppercase tracking-tight mt-2">The Savoy Bangor</h2>
-                <p class="text-subtle font-mono text-xs mt-1">Former Savoy Hotel & Entertainment Venue, County Down</p>
+        <!-- Project 3: The WeavingWorks Belfast -->
+        <section id="project-3" class="project-section scroll-mt-24 space-y-8 bg-white clean-border hard-shadow-lg p-6 sm:p-10">
+            <div class="border-b border-ink pb-4">
+                <span class="font-mono text-xs font-bold bg-ink text-canvas px-2.5 py-1 uppercase tracking-widest">Project 03</span>
+                <h2 class="font-display text-3xl sm:text-5xl font-bold uppercase tracking-tight mt-2">The WeavingWorks Belfast</h2>
+                <p class="text-muted font-mono text-xs mt-1">Historic Linen Warehouse, Alfred Street / Linen Quarter</p>
             </div>
 
-            <!-- Side-by-Side Square Image Comparison -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="space-y-2">
-                    <div class="relative brutal-border bg-zinc-900 aspect-square flex items-center justify-center overflow-hidden">
-                        <img src="images/restore 3a.png" alt="The Savoy Bangor - View A" class="w-full h-full object-contain p-2">
-                    </div>
-                    <div class="flex justify-between items-center font-mono text-xs px-1">
-                        <span class="font-bold uppercase">View A: Artistic Render</span>
-                        <span class="text-subtle">Artwork Collage</span>
+            <!-- Interactive Day/Night Slider -->
+            <div class="space-y-2">
+                <div class="comparison-container clean-border bg-zinc-900" id="slider-p3">
+                    <img src="images/restore 2a.png" alt="The WeavingWorks - Day" class="img-day">
+                    <img src="images/restore 2b.png" alt="The WeavingWorks - Night" class="img-night">
+                    <div class="comparison-slider" style="left: 50%;">
+                        <div class="comparison-handle">D/N</div>
                     </div>
                 </div>
-                <div class="space-y-2">
-                    <div class="relative brutal-border bg-zinc-900 aspect-square flex items-center justify-center overflow-hidden">
-                        <img src="images/restore 3b.png" alt="The Savoy Bangor - View B" class="w-full h-full object-contain p-2">
-                    </div>
-                    <div class="flex justify-between items-center font-mono text-xs px-1">
-                        <span class="font-bold uppercase">View B: Blueprint & Detail</span>
-                        <span class="text-subtle">Archive Analysis</span>
-                    </div>
+                <div class="flex justify-between items-center font-mono text-xs text-muted px-1">
+                    <span>← Drag slider to compare Day & Night states →</span>
+                    <span class="font-bold text-ink">Square Format Archive</span>
                 </div>
             </div>
 
-            <!-- Deep Information Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 pt-4 border-t border-zinc-200">
-                <div class="space-y-3">
-                    <h3 class="font-display font-bold uppercase tracking-wide text-sm bg-ink text-canvas px-3 py-1.5 inline-block">01. Chronology & Origin</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li><strong class="font-mono">Construction Dates:</strong> Built in 1932 for Mr J. Gaston (Northern Ireland Tours); extended and refaced in 1933.</li>
-                        <li><strong class="font-mono">Original Architect:</strong> John McBride Neill (noted Ulster cinema and hospitality architect).</li>
-                        <li><strong class="font-mono">Historical Use:</strong> A quintessential interwar seaside entertainment and hotel destination anchoring Bangor's golden age as a bustling coastal holiday resort for Belfast day-trippers.</li>
+            <!-- Information Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 pt-4 border-t border-zinc-200">
+                <div class="space-y-2">
+                    <h3 class="font-display font-bold uppercase tracking-wide text-xs bg-ink text-canvas px-2.5 py-1 inline-block">01. Chronology & Origin</h3>
+                    <ul class="space-y-1.5 text-xs sm:text-sm text-zinc-700">
+                        <li><strong class="font-mono text-ink">Construction:</strong> 1907–1908.</li>
+                        <li><strong class="font-mono text-ink">Original Architect:</strong> William J. Roome.</li>
+                        <li><strong class="font-mono text-ink">Historical Use:</strong> Grand red brick linen warehouse for Greeves, Ridgeway & Co. during Belfast's peak as global capital of the linen trade ("Linenopolis").</li>
                     </ul>
                 </div>
-                <div class="space-y-3">
-                    <h3 class="font-display font-bold uppercase tracking-wide text-sm bg-ink text-canvas px-3 py-1.5 inline-block">02. Adaptive Reuse & Architects</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li><strong class="font-mono">Lead Architectural Firm:</strong> McGarry-Moon Architects (Coleraine).</li>
-                        <li><strong class="font-mono">Intervention Strategy:</strong> Award-winning redevelopment transforming two post-war, derelict hotel structures into contemporary residential apartments. The architects balanced coastal conservation constraints with modern spatial planning, introducing dynamic lightwells, crisp contemporary metal cladding accents, and high-density seaside living units.</li>
+                <div class="space-y-2">
+                    <h3 class="font-display font-bold uppercase tracking-wide text-xs bg-ink text-canvas px-2.5 py-1 inline-block">02. Adaptive Reuse & Architects</h3>
+                    <ul class="space-y-1.5 text-xs sm:text-sm text-zinc-700">
+                        <li><strong class="font-mono text-ink">Architectural Firm:</strong> RMI Architects (Rejen Group).</li>
+                        <li><strong class="font-mono text-ink">Intervention:</strong> Transformed derelict industrial warehouse into creative workspaces, retaining heavy timber floor joists and cast-iron columns.</li>
                     </ul>
                 </div>
-                <div class="space-y-3">
-                    <h3 class="font-display font-bold uppercase tracking-wide text-sm bg-accent text-white px-3 py-1.5 inline-block">03. Artwork & Concept</h3>
-                    <p class="text-sm leading-relaxed">
-                        This piece collages John McBride Neill's original 1933 art-deco curved facade blueprints with recent demolition photography. It interrogates the shift in seaside towns from seasonal leisure economies to permanent commuter residential settlements.
+                <div class="space-y-2">
+                    <h3 class="font-display font-bold uppercase tracking-wide text-xs bg-accent text-white px-2.5 py-1 inline-block">03. Cinematic Architecture</h3>
+                    <p class="text-xs sm:text-sm leading-relaxed text-zinc-700">
+                        Evokes the industrial loft aesthetic found in <strong class="text-ink">The Social Network</strong> or <strong class="text-ink">Blade Runner</strong> (early industrial spaces turned into modern digital tech hubs).
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- Project 4: Mersey Street Primary School Houses -->
-        <section id="project-4" class="project-section scroll-mt-28 space-y-8 bg-white brutal-border brutal-shadow-lg p-6 lg:p-10">
-            <div class="border-b-2 border-ink pb-6">
-                <span class="font-mono text-xs font-bold bg-ink text-canvas px-3 py-1 uppercase tracking-widest">Project 04</span>
-                <h2 class="font-display text-4xl lg:text-5xl font-bold uppercase tracking-tight mt-2">Mersey Street Primary School</h2>
-                <p class="text-subtle font-mono text-xs mt-1">Grade B1 Listed School Transformed into Social Housing, East Belfast</p>
+        <!-- Project 4: The Savoy Bangor -->
+        <section id="project-4" class="project-section scroll-mt-24 space-y-8 bg-white clean-border hard-shadow-lg p-6 sm:p-10">
+            <div class="border-b border-ink pb-4">
+                <span class="font-mono text-xs font-bold bg-ink text-canvas px-2.5 py-1 uppercase tracking-widest">Project 04</span>
+                <h2 class="font-display text-3xl sm:text-5xl font-bold uppercase tracking-tight mt-2">The Savoy Bangor</h2>
+                <p class="text-muted font-mono text-xs mt-1">Former Savoy Hotel & Entertainment Venue, County Down</p>
             </div>
 
-            <!-- Side-by-Side Square Image Comparison -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="space-y-2">
-                    <div class="relative brutal-border bg-zinc-900 aspect-square flex items-center justify-center overflow-hidden">
-                        <img src="images/restore 4a.png" alt="Mersey Street Primary School - View A" class="w-full h-full object-contain p-2">
-                    </div>
-                    <div class="flex justify-between items-center font-mono text-xs px-1">
-                        <span class="font-bold uppercase">View A: Artistic Render</span>
-                        <span class="text-subtle">Artwork Collage</span>
+            <!-- Interactive Day/Night Slider -->
+            <div class="space-y-2">
+                <div class="comparison-container clean-border bg-zinc-900" id="slider-p4">
+                    <img src="images/restore 3a.png" alt="The Savoy Bangor - Day" class="img-day">
+                    <img src="images/restore 3b.png" alt="The Savoy Bangor - Night" class="img-night">
+                    <div class="comparison-slider" style="left: 50%;">
+                        <div class="comparison-handle">D/N</div>
                     </div>
                 </div>
-                <div class="space-y-2">
-                    <div class="relative brutal-border bg-zinc-900 aspect-square flex items-center justify-center overflow-hidden">
-                        <img src="images/restore 4b.png" alt="Mersey Street Primary School - View B" class="w-full h-full object-contain p-2">
-                    </div>
-                    <div class="flex justify-between items-center font-mono text-xs px-1">
-                        <span class="font-bold uppercase">View B: Blueprint & Detail</span>
-                        <span class="text-subtle">Archive Analysis</span>
-                    </div>
+                <div class="flex justify-between items-center font-mono text-xs text-muted px-1">
+                    <span>← Drag slider to compare Day & Night states →</span>
+                    <span class="font-bold text-ink">Square Format Archive</span>
                 </div>
             </div>
 
-            <!-- Deep Information Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 pt-4 border-t border-zinc-200">
-                <div class="space-y-3">
-                    <h3 class="font-display font-bold uppercase tracking-wide text-sm bg-ink text-canvas px-3 py-1.5 inline-block">01. Chronology & Origin</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li><strong class="font-mono">Construction Dates:</strong> Designed prior to World War II.</li>
-                        <li><strong class="font-mono">Original Architect:</strong> Reginald Sherman Wilshire (Appointed architect to the Belfast Education Committee in 1926).</li>
-                        <li><strong class="font-mono">Historical Use:</strong> One of a "family" of 26 exceptional schools designed by Wilshire across Belfast, serving as an institutional educational hub for generations of working-class children in East Belfast. Grade B1 Listed building.</li>
+            <!-- Information Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 pt-4 border-t border-zinc-200">
+                <div class="space-y-2">
+                    <h3 class="font-display font-bold uppercase tracking-wide text-xs bg-ink text-canvas px-2.5 py-1 inline-block">01. Chronology & Origin</h3>
+                    <ul class="space-y-1.5 text-xs sm:text-sm text-zinc-700">
+                        <li><strong class="font-mono text-ink">Construction:</strong> Built in 1932; extended and refaced in 1933.</li>
+                        <li><strong class="font-mono text-ink">Original Architect:</strong> John McBride Neill.</li>
+                        <li><strong class="font-mono text-ink">Historical Use:</strong> Interwar seaside entertainment and hotel destination anchoring Bangor's golden age as a holiday resort for Belfast day-trippers.</li>
                     </ul>
                 </div>
-                <div class="space-y-3">
-                    <h3 class="font-display font-bold uppercase tracking-wide text-sm bg-ink text-canvas px-3 py-1.5 inline-block">02. Adaptive Reuse & Architects</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li><strong class="font-mono">Client / Developer:</strong> Connswater Homes.</li>
-                        <li><strong class="font-mono">Intervention Strategy:</strong> Conversion into 30 high-quality social housing apartments (28 two-bed and 2 one-bed units). Utilized advanced cathodic protection (DuoGuard hybrid anode systems) to treat reinforced concrete distress without altering historic facades, preserving original classroom windows and structural columns while carving habitable multi-level residential layouts within the soaring classroom volumes.</li>
+                <div class="space-y-2">
+                    <h3 class="font-display font-bold uppercase tracking-wide text-xs bg-ink text-canvas px-2.5 py-1 inline-block">02. Adaptive Reuse & Architects</h3>
+                    <ul class="space-y-1.5 text-xs sm:text-sm text-zinc-700">
+                        <li><strong class="font-mono text-ink">Architectural Firm:</strong> McGarry-Moon Architects.</li>
+                        <li><strong class="font-mono text-ink">Intervention:</strong> Award-winning redevelopment turning derelict hotel structures into contemporary residential apartments with modern metal cladding and lightwells.</li>
                     </ul>
                 </div>
-                <div class="space-y-3">
-                    <h3 class="font-display font-bold uppercase tracking-wide text-sm bg-accent text-white px-3 py-1.5 inline-block">03. Artwork & Concept</h3>
-                    <p class="text-sm leading-relaxed">
-                        This collage juxtaposes Wilshire's symmetrical 1920s educational blueprint elevations with modern structural anode diagrams. It explores how civic institutional buildings can be repurposed for public social welfare, preserving community memory through residential sanctuary.
+                <div class="space-y-2">
+                    <h3 class="font-display font-bold uppercase tracking-wide text-xs bg-accent text-white px-2.5 py-1 inline-block">03. Cinematic Architecture</h3>
+                    <p class="text-xs sm:text-sm leading-relaxed text-zinc-700">
+                        Shares the whimsical coastal optimism and retro-futuristic styling of <strong class="text-ink">Meet the Robinsons</strong> or Wes Anderson's <strong class="text-ink">The Grand Budapest Hotel</strong> (historic resort architecture).
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- Exhibition Colophon Footer -->
-        <footer class="border-t-2 border-ink pt-12 pb-20 grid grid-cols-1 md:grid-cols-2 gap-8 text-sm font-sans">
-            <div class="space-y-4">
-                <h4 class="font-display font-bold uppercase tracking-wider text-base">RESTORED Exhibition Archive</h4>
-                <p class="text-subtle">
-                    An independent architectural documentation project focusing on Northern Ireland's adaptive reuse vernacular. Designed for physical NFC interaction at gallery installations and digital open-access research.
-                </p>
-                <p class="font-mono text-xs text-ink">© 2026 RESTORED Exhibition. All rights reserved.</p>
+        <!-- Footer -->
+        <footer class="border-t border-ink pt-10 pb-16 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 text-xs font-mono">
+            <div>
+                <p class="font-bold uppercase text-ink">RESTORED — Belfast Late Night Art</p>
+                <p class="text-muted mt-1">Curated architectural exhibition & digital research archive.</p>
             </div>
-            <div class="space-y-4 md:text-right">
-                <h4 class="font-display font-bold uppercase tracking-wider text-base">Navigation & Hash Routing</h4>
-                <p class="text-subtle font-mono text-xs">
-                    Use URL hashes (#project-1, #project-2, #project-3, #project-4) or physical gallery NFC tags for direct viewport routing.
-                </p>
-                <div class="flex md:justify-end gap-3 font-mono text-xs uppercase pt-2">
-                    <a href="#overview" class="underline hover:text-accent">Back to Top ↑</a>
-                </div>
+            <div>
+                <a href="#overview" class="px-4 py-2 clean-border bg-white hover:bg-ink hover:text-canvas transition-all uppercase">Back to Top ↑</a>
             </div>
         </footer>
 
     </main>
 
-    <!-- JavaScript for NFC Hash Handling -->
+    <!-- JavaScript for Interactive Day/Night Sliders & Hash Routing -->
     <script>
+        // Setup comparison sliders for all 4 projects
+        ['slider-p1', 'slider-p2', 'slider-p3', 'slider-p4'].forEach(id => {
+            const container = document.getElementById(id);
+            if (!container) return;
+            const slider = container.querySelector('.comparison-slider');
+            const imgNight = container.querySelector('.img-night');
+
+            function updateSlider(clientX) {
+                const rect = container.getBoundingClientRect();
+                let x = clientX - rect.left;
+                if (x < 0) x = 0;
+                if (x > rect.width) x = rect.width;
+                const percentage = (x / rect.width) * 100;
+                
+                slider.style.left = percentage + '%';
+                imgNight.style.clipPath = `polygon(100% 0, 100% 100%, ${percentage}% 100%, ${percentage}% 0)`;
+            }
+
+            container.addEventListener('pointerdown', (e) => {
+                container.setPointerCapture(e.pointerId);
+                updateSlider(e.clientX);
+            });
+
+            container.addEventListener('pointermove', (e) => {
+                if (e.buttons > 0) {
+                    updateSlider(e.clientX);
+                }
+            });
+        });
+
+        // Hash routing for direct navigation
         function handleRouting() {
             const hash = window.location.hash;
             if (hash) {
